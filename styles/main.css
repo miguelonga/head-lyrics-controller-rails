@@ -32,6 +32,7 @@ video {
 	bottom: 0;
 	overflow: hidden;
 	z-index: 0;
+	visibility: hidden;
 }
 
 .loading {
