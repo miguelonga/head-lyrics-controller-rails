@@ -187,19 +187,20 @@ video {
 
 /* Sample hotspots */
 #one {
-	width: 10%;
-	height: 20%;
-	top: 50%;
+	width: 20%;
+	height: 50%;
+	top: 25%;
 	left: 0;
-	margin-top: -10%;
+	background: red;
 }
 
 #another {
 	width: 20%;
-	height: 10%;
-	top: 0;
-	left: 50%;
+	height: 50%;
+	top: 25%;
+	right: 0;
 	margin-left: -10%;
+	background: blue;
 }
 
 .link {
