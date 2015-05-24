@@ -1,3 +1,11 @@
+Hace falta lanzar un servidor para abrir el app.html
+
+ - en la consola: python -m SimpleHTTPServer
+
+ - en el navegador: localhost:8000/app.html
+
+
+
 JS Motion Detection
 ===================
 
