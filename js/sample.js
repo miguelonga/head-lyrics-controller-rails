@@ -1,4 +1,6 @@
 (function(){
+	var counter = 0;
+
 
 
 	$('.link').on('motion', function(ev, data){
@@ -6,15 +8,35 @@
 	});
 
 	$('#one').on('motion', function(){
+		console.log('izquierda---------')
 		$( 'body' ).css( "background-color", "orange" );
-		$.fn.fullpage.moveSectionUp();
+		counter++;
+		if (counter == 5) {
+			$.fn.fullpage.moveSectionUp()
+			counter = 0;
+		};
+		
 	});
 
 	$('#another').on('motion', function(){
-
+		console.log('---------derecha');
 		$( 'body' ).css( "background-color", "green" );
-		$.fn.fullpage.moveSectionDown();
-
+		counter++;
+		console.log(counter);
+		if (counter == 5) {
+			$.fn.fullpage.moveSectionDown();
+			counter = 0;
+		};
 	});
+
+
+
+	
+
+	
+
+
+
+
 
 })();
