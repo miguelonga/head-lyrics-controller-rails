@@ -227,7 +227,7 @@
 
 	$(window).on('start resize', getCoords);
 
-	function highlightHotSpots() {
+	function highlightHotSpoxts() {
 		var canvas = $("#canvas-highlights")[0];
 		var ctx = canvas.getContext('2d');
 		canvas.width = canvas.width;
