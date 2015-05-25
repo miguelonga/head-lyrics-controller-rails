@@ -7,17 +7,15 @@ body {
 	color: #333;
 }
 
-.black-background {
-	background-color: #000;
-	-webkit-transition: background-color 200ms ease 600ms;
-	-moz-transition: background-color 200ms ease 600ms;
-	-o-transition: background-color 200ms ease 600ms;
-	-ms-transition: background-color 200ms ease 600ms;
-	transition: background-color 200ms ease 600ms;
-}
 
-video {
-	display: none;
+.counter{
+	position: fixed;
+	right: 0px;
+	font-size: 20pc;
+}
+.counter2{
+	position: fixed;
+	font-size: 20pc;
 }
 
 #container {
