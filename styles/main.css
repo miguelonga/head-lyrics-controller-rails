@@ -20,6 +20,16 @@ video {
 	display: none;
 }
 
+.counter{
+	position: fixed;
+	right: 0px;
+	font-size: 20pc;
+}
+.counter2{
+	position: fixed;
+	font-size: 20pc;
+}
+
 #container {
 
 }
