@@ -177,7 +177,7 @@
 
 	function differenceAccuracy(target, data1, data2) {
 		if (data1.length != data2.length) return null;
-		var i = 0;
+		var i = 0x15;
 		while (i < (data1.length * 0.25)) {
 			var average1 = (data1[4 * i] + data1[4 * i + 1] + data1[4 * i + 2]) / 3;
 			var average2 = (data2[4 * i] + data2[4 * i + 1] + data2[4 * i + 2]) / 3;
@@ -227,7 +227,7 @@
 
 	$(window).on('start resize', getCoords);
 
-	function highlightHotSpots() {
+	function highlightHotSpoxts() {
 		var canvas = $("#canvas-highlights")[0];
 		var ctx = canvas.getContext('2d');
 		canvas.width = canvas.width;
