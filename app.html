@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset='utf-8'>
+    <title>JavaScript Motion Detection</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <link id="favicon" rel="icon" type="image/ico" sizes="16x16" href="images/favicon.ico">
+    <link id="favicon2x" rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="styles/jquery.fullPage.css" />
+
+</head>
+<body>
+<div id="fullpage" class="full-page">
+    <div class="counter"></div>
+    <div class="counter2"></div>
+    <div id="container">
+
+        <div id="header">
+            <div class="allow">Click "Allow" above to control stuff just by waving your hands.</div>
+            <div class="instructions">Wave your hands, it's fun.</div>
+            <div class="browsersWithVideo">This demo lets you control stuff using motion detection in your browser. Install
+                <a href="https://www.google.com/landing/chrome/beta/" target="_blank">Chrome Beta</a> to play.
+            </div>
+        </div>
+
+            <div class="lyrics">
+                <section class="section" id="section0">
+                Hace ya algún tiempo que vivo sin ti 
+                Y aún no me acostumbro, ¿por qué voy a mentir? 
+                Juntos acordamos mejor separarnos 
+                Hoy sé que no puedo seguir así.<br><br>
+
+                </section>
+                <section class="section" id="section1">
+                    Intenté olvidarte y no lo conseguí 
+                    Lleno de recuerdos, todos hablan de ti 
+                    La casa vacía, ni luz ni alegría 
+                    Estoy muerto en vida si no estás aquí.<br><br>
+                </section>
+                <section class="section" id="section2">
+                    Dime que sientes lo mismo que yo 
+                    Dime que me quieres, dímelo 
+                    Cuando zarpa el amor 
+                    Navega a ciegas, es quien lleva el timón 
+                    Y cuando sube la marea al corazón 
+                    Sabe que el viento sopla a su favor 
+                    No podemos hacer nada 
+                    Por cambiar el rumbo que marcó para los dos 
+                    Cuando zarpa el amor.<br><br>
+
+                </section>
+                <section class="section" id="section3">
+                    No sabes lo difícil que ha llegado a ser 
+                    Estar sin tu cariño, sin poderte tener 
+                    Cuánto eché de menos, mi niña, tus besos 
+                    De ti ya nunca me separaré.<br><br>
+
+                </section>
+                <section class="section" id="section4">
+                    Aún llevas la alianza que te regalé 
+                    Y en tus ojos brilla la ilusión otra vez 
+                    Siento escalofríos cuando estoy contigo 
+                    Acerca tus manos y acaríciame.<br><br>
+
+                </section>
+                <section class="section" id="section5">
+                    Dime que sientes lo mismo que yo 
+                    Dime que me quieres, dímelo 
+                    Cuando zarpa el amor
+                    Navega a ciegas, es quien lleva el timón 
+                    Y cuando sube la marea al corazón 
+                    Sabe que el viento sopla a su favor 
+                    No podemos hacer nada 
+                    Por cambiar el rumbo que marcó para los dos 
+                    Cuando zarpa el amor.<br><br>
+
+                </section>
+                <section class="section" id="section6">
+                    Navega a ciegas, es quien lleva el timón 
+                    Y cuando sube la marea al corazón 
+                    Sabe que el viento sopla a su favor 
+                    No podemos hacer nada 
+                    Por cambiar el rumbo que marcó para los dos 
+                    Cuando zarpa el amor
+                </section>
+
+                
+          
+        </div>
+        
+        <div id="content">
+            
+            <video id="webcam" class="myVideo" autoplay width="640" height="480"></video>
+            
+            <canvas id="canvas-source" width="640" height="480"></canvas>
+            <canvas id="canvas-highlights" width="640" height="480"></canvas>
+            <canvas id="canvas-blended" width="640" height="480"></canvas>
+
+            <div id="hotSpots">
+                <div id="one"></div>
+                <div id="another"></div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="magic">
+            </div>
+        </div>
+
+    </div>
+  </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/sample.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage'],
+            sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+            scrollBar: true
+        });
+    });
+</script>
+
+</body>
+</html>
