@@ -4,7 +4,7 @@
 	<meta charset='utf-8'>
 	<title>JavaScript Motion Detection</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="styles/main.css"/>
+	<link rel="stylesheet" href="styles/form_page.css"/>
 	<link id="favicon" rel="icon" type="image/ico" sizes="16x16" href="images/favicon.ico">
 	<link id="favicon2x" rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
 	<link rel="stylesheet" type="text/css" href="styles/jquery.fullPage.css" />
@@ -32,12 +32,16 @@
 		    	
 		    </div>
 		    <div role="tabpanel" class="tab-pane" id="upload-song">
-		    	<form class="navbar-form navbar-left" role="search">
+		    	<p>
+		    		rem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+		    	</p>
+		    	<form class="center" role="search">
 		    	  <div class="form-group">
-		    	    <input type="text" class="form-control" placeholder="Search">
+		    	    <input type="text" class="form-control" placeholder="Nombre de la canción">
+		    	    <textarea name="song" class="center song form-control" placeholder="Copia y edita aquí la letra de la canción"></textarea>
 		    	  </div>
-		    	  <button type="submit" class="btn btn-default">Submit</button>
-		    	</form>
+		    	  <button type="submit" class="btn btn-default center">Empezar</button>
+		    	</form>	
 		    </div>
 		    <div role="tabpanel" class="tab-pane" id="favorites">...</div>
 		  </div>
@@ -45,8 +49,17 @@
 		</div>
 
 	</div>	
+<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+<script>
+	Parse.initialize("tHUeptqZlUbor7NQaGSVZdrVEq9gzDLaWEU1oArl", "i0U15ICVA4b8lPG5jLWhkPI1PYLRW05PpqyBLTzQ");
 
-
+	
+	var TestObject = Parse.Object.extend("TestObject");
+	var testObject = new TestObject();
+	testObject.save({section0: "song"}).then(function(object) {
+	  alert("yay! it worked");
+	});
+</script>
 	
 </body>
 
