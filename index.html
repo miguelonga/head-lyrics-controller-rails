@@ -35,50 +35,27 @@
                     <br><br>
                 </section>
                 <section class="section" id="section2">
-                    Dime que sientes lo mismo que yo 
-                    Dime que me quieres, dímelo 
-                    Cuando zarpa el amor 
-                    Navega a ciegas, es quien lleva el timón 
-                    Y cuando sube la marea al corazón 
-                    Sabe que el viento sopla a su favor 
-                    No podemos hacer nada 
-                    Por cambiar el rumbo que marcó para los dos 
-                    Cuando zarpa el amor.<br><br>
+                    <br><br>
 
                 </section>
                 <section class="section" id="section3">
-                    No sabes lo difícil que ha llegado a ser 
-                    Estar sin tu cariño, sin poderte tener 
-                    Cuánto eché de menos, mi niña, tus besos 
-                    De ti ya nunca me separaré.<br><br>
+                    <br><br>
 
                 </section>
                 <section class="section" id="section4">
-                    Aún llevas la alianza que te regalé 
-                    Y en tus ojos brilla la ilusión otra vez 
-                    Siento escalofríos cuando estoy contigo 
-                    Acerca tus manos y acaríciame.<br><br>
+                    <br><br>
 
                 </section>
                 <section class="section" id="section5">
-                    Dime que sientes lo mismo que yo 
-                    Dime que me quieres, dímelo 
-                    Cuando zarpa el amor
-                    Navega a ciegas, es quien lleva el timón 
-                    Y cuando sube la marea al corazón 
-                    Sabe que el viento sopla a su favor 
-                    No podemos hacer nada 
-                    Por cambiar el rumbo que marcó para los dos 
-                    Cuando zarpa el amor.<br><br>
+                    <br><br>
 
                 </section>
                 <section class="section" id="section6">
-                    Navega a ciegas, es quien lleva el timón 
-                    Y cuando sube la marea al corazón 
-                    Sabe que el viento sopla a su favor 
-                    No podemos hacer nada 
-                    Por cambiar el rumbo que marcó para los dos 
-                    Cuando zarpa el amor
+                    
+                </section>
+
+                <section class="section" id="section7">
+                    
                 </section>
 
         </div>
@@ -108,19 +85,36 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/sample.js"></script>
-<script src="js/our_parse.js"></script>
 <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
-
 <script type="text/javascript" src="js/jquery.fullPage.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#fullpage').fullpage({
-            anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage'],
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage', '8thPage'],
             scrollBar: true
         });
     });
 </script>
-
+<script>
+    Parse.initialize("tHUeptqZlUbor7NQaGSVZdrVEq9gzDLaWEU1oArl", "i0U15ICVA4b8lPG5jLWhkPI1PYLRW05PpqyBLTzQ");
+    id = window.location.href.split('#')[1];
+    getSectionsInIndex(id);
+    function getSectionsInIndex(id){
+        Song = Parse.Object.extend("Song");
+        query = new Parse.Query(Song);
+        query.get(id, {
+          success: function(song) {
+            mySections = song.get('sections');
+            for (i = 0; i < mySections.length; i++) { 
+                document.getElementById("section" + i).innerHTML = mySections[i];
+            }
+          },
+          error: function(object, error) {
+            console.log('error final');
+          }
+        });
+    }
+</script>
 
 </body>
 </html>
