@@ -7,32 +7,11 @@ $(function(){
         var mySong = new Song();
         mySong.set('name', $('#song_name').val());
         mySong.set('sections', $('#song').val().split('..'))
-        mySong.save().then(function(object) {
+        mySong.save().then(function(object){
+            window.location.href = "http://localhost:8000/index.html#" + object.id;
+            console.log(object.id);
         });
-
-     
     });
-
-    getFavorites();
-
-    function getFavorites(){
-        var Song = Parse.Object.extend("Song");
-        var query = new Parse.Query(Song);
-        query.limit(5);
-        query.find({
-          success: function(results) {
-            for (var i = 0; i < results.length; i++) { 
-              var song = results[i];
-              console.log(results[i].id);
-              $('#item' + i).innerHTML = song.id;
-            }
-          },
-          error: function(error) {
-            alert("Error: " + error.code + " " + error.message);
-          }
-        });
-    }
-
 
     $('#search_song').click(function(event){
         event.preventDefault();
@@ -41,28 +20,12 @@ $(function(){
         mySong = query.equalTo("name", $('#searcher').val());
         query.find({
           success: function(mySong) {
-            getSections(mySong[0].id);
+            window.location.replace("http://localhost:8000/index.html#" + mySong[0].id);
           },
           error: function(error) {
             console.log('error en la busqueda')
           }
         });
-
-        });
-
-     
-    function getSections(id){
-        Song = Parse.Object.extend("Song");
-        query = new Parse.Query(Song);
-        query.get(id, {
-          success: function(song) {
-            mySections = song.get('sections');
-          },
-          error: function(object, error) {
-            console.log('error en getSections');
-          }
-        });
-
-    }
+    });
 
 }); 

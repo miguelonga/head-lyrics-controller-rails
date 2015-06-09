@@ -2,7 +2,7 @@
 	var counter = 0;
 	var counter2 = 0;
 	var counter2_back = 3;
-	var counter_back = 3;
+	var counter_back = 2;
 
 	$('#one').on('motion', function(){
 		counter2++;
@@ -19,11 +19,11 @@
 
 	$('#another').on('motion', function(){
 		counter++;
-		if (counter == 5 || counter == 10 || counter == 15 ) {counter_back--};
-		if (counter == 15) {
+		if (counter == 5 || counter == 10) {counter_back--};
+		if (counter == 10) {
 			$.fn.fullpage.moveSectionDown();
 			counter = 0;
-			counter_back = 3;
+			counter_back = 2;
 		};
 		document.querySelector('.counter').innerHTML = counter_back;
 
