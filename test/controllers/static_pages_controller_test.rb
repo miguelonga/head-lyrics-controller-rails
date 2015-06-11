@@ -7,4 +7,4 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "Home | Head Lyrics Controller"
   end
 
-end
+end	
