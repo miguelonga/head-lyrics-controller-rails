@@ -26,7 +26,7 @@ class SongTest < ActiveSupport::TestCase
   end
 
   test "content should be at less 240 characters" do
-    @songs.content = "Ñorem impsun"
+    @songs.content = "Ñorem impsumun"
     assert_not @songs.valid?
   end
 end
