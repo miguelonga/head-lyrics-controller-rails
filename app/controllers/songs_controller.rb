@@ -11,6 +11,25 @@ class SongsController < ApplicationController
     end
   end
 
+  def show
+    @song = Song.find(params[:id])
+    @sections = @song.content.split('..')
+  end
+
+  def edit
+    @song = Song.find(params[:id])
+  end
+
+  def update
+    @song = Song.find(params[:id])
+    if @song.update_attributes(song_params)
+      flash[:success] = "Song updated"
+      redirect_to @song
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
   end
 
